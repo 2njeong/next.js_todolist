@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
+import QueryProvider from "./provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,7 +25,7 @@ export default function RootLayout({
             <Link href={`/${page}`}>{page.toUpperCase()}</Link>
           </p>
         ))}
-        {children}
+        <QueryProvider>{children}</QueryProvider>
       </body>
     </html>
   );

@@ -1,6 +1,4 @@
-import React from "react";
-
-const About = () => {
+const About = async () => {
   return <div>About</div>;
 };
 
