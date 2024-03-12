@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,9 +15,17 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const pages = ["about", "report", "todos-csr", "todos-ssr"];
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {pages.map((page) => (
+          <p key={page}>
+            <Link href={`/${page}`}>{page.toUpperCase()}</Link>
+          </p>
+        ))}
+        {children}
+      </body>
     </html>
   );
 }
