@@ -1,10 +1,10 @@
 "use client";
-import { Company_Query_Key, fetchCompany } from "(@/fns/queryFns)";
+import { COMPANY_QUERY_KEY, fetchCompany } from "(@/fns/fetchFns)";
 import { useQuery } from "@tanstack/react-query";
 
 const About = () => {
   const { data } = useQuery({
-    queryKey: Company_Query_Key,
+    queryKey: COMPANY_QUERY_KEY,
     queryFn: fetchCompany,
   });
 

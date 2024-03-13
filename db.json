@@ -9,7 +9,7 @@
       "id": "1",
       "title": "아메리카노 마시기",
       "contents": "아메리카노 마시기",
-      "isDone": false
+      "isDone": true
     },
     {
       "id": "2",
@@ -75,6 +75,24 @@
       "id": "12",
       "title": "케이크 먹기",
       "contents": "케이크 먹기",
+      "isDone": false
+    },
+    {
+      "id": "1851",
+      "title": "오늘은 ",
+      "contents": "뭐먹지",
+      "isDone": false
+    },
+    {
+      "id": "de9a",
+      "title": "점심은 ",
+      "contents": "뭐먹지",
+      "isDone": false
+    },
+    {
+      "id": "1270",
+      "title": "저녁은",
+      "contents": "뭐먹?",
       "isDone": false
     }
   ]

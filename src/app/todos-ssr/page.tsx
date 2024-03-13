@@ -1,5 +1,5 @@
 // 방법1. dehydreation을 이용한 SSR
-import { Todos_Query_key } from "(@/fns/queryFns)";
+import { TODOS_QUERY_KEY } from "(@/fns/fetchFns)";
 import {
   HydrationBoundary,
   QueryClient,
@@ -11,9 +11,9 @@ import { Todo } from "(@/types)";
 export default async function TodosSSR() {
   const queryClient = new QueryClient();
   await queryClient.prefetchQuery({
-    queryKey: Todos_Query_key,
+    queryKey: TODOS_QUERY_KEY,
     queryFn: async () => {
-      const response = await fetch("http:localhost:4000/todos", {
+      const response = await fetch("http://localhost:4000/todos", {
         cache: "no-cache",
       });
       const data: Todo[] = await response.json();

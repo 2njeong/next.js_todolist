@@ -1,11 +1,11 @@
 "use client";
-import { Todos_Query_key } from "(@/fns/queryFns)";
+import { TODOS_QUERY_KEY } from "(@/fns/fetchFns)";
 import { Todo } from "(@/types)";
 import { useQuery } from "@tanstack/react-query";
 
 const Report = () => {
   const { data } = useQuery({
-    queryKey: Todos_Query_key,
+    queryKey: TODOS_QUERY_KEY,
     queryFn: async () => {
       const response = await fetch("http://localhost:4000/todos", {
         next: { revalidate: 10 },

@@ -1,4 +1,4 @@
-import { Company_Query_Key, fetchCompany } from "(@/fns/queryFns)";
+import { COMPANY_QUERY_KEY, fetchCompany } from "(@/fns/fetchFns)";
 import {
   HydrationBoundary,
   QueryClient,
@@ -9,7 +9,7 @@ import About from "./About";
 export default async function AboutPage() {
   const queryClient = new QueryClient();
   await queryClient.prefetchQuery({
-    queryKey: Company_Query_Key,
+    queryKey: COMPANY_QUERY_KEY,
     queryFn: fetchCompany,
   });
 

@@ -1,17 +1,16 @@
 // 방법1. dehydration으로 ISR 구현
-import { Todos_Query_key } from "(@/fns/queryFns)";
+import { TODOS_QUERY_KEY } from "(@/fns/fetchFns)";
 import {
   HydrationBoundary,
   QueryClient,
   dehydrate,
-  useQueries,
 } from "@tanstack/react-query";
 import Report from "./Report";
 
 export default async function ReportPage() {
   const queryClient = new QueryClient();
   await queryClient.prefetchQuery({
-    queryKey: Todos_Query_key,
+    queryKey: TODOS_QUERY_KEY,
     queryFn: async () => {
       const response = await fetch("http://localhost:4000/todos", {
         next: { revalidate: 10 },

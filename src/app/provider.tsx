@@ -22,9 +22,8 @@ function getQueryClient() {
     return browserQueryClient;
   }
 }
-
+export const queryClient = getQueryClient();
 const QueryProvider = ({ children }: PropsWithChildren) => {
-  const queryClient = getQueryClient();
   return (
     <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
   );
