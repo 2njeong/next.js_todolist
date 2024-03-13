@@ -1,7 +1,9 @@
 export type Company = {
-  name: string;
-  description: string;
-  image: string;
+  companyInfo: {
+    name: string;
+    description: string;
+    image: string;
+  };
 };
 
 export type Todo = {

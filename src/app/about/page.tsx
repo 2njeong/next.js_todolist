@@ -8,7 +8,6 @@ import About from "./About";
 
 export default async function AboutPage() {
   const queryClient = new QueryClient();
-
   await queryClient.prefetchQuery({
     queryKey: Company_Query_Key,
     queryFn: async () => {

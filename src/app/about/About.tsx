@@ -8,10 +8,12 @@ const About = () => {
     queryFn: fetchCompany,
   });
 
+  const { companyInfo } = data;
+
   return (
     <div>
-      우리회사의 이름은 {data.companyInfo.name}이고, 설명은
-      {data.companyInfo.desctiption}이며, 이미지는 {data.companyInfo.image}
+      우리회사의 이름은 {companyInfo.name}이고, 설명은
+      {companyInfo.description}이며, 이미지는 {companyInfo.image}
       입니다.
     </div>
   );

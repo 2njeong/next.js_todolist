@@ -1,21 +1,26 @@
-import { Company } from "(@/types)";
-import axios, { AxiosInstance, AxiosResponse } from "axios";
-
 export const Company_Query_Key = ["companyInfo"];
 export const Todos_Query_key = ["todos"];
 
-const axiosApi: AxiosInstance = axios.create({
-  baseURL: "http://localhost:3000/api",
-});
-
-export const fetchCompany = async (): Promise<Company | undefined> => {
+export const fetchCompany = async () => {
   try {
-    const { data }: AxiosResponse<Company> = await axiosApi.get<Company>(
-      "/company"
-    );
+    const response = await fetch("http://localhost:3000/company");
+    const data = await response.json();
+
     return data;
   } catch (error) {
-    console.error(error);
+    console.error("Company 데이터 로드 실패", error);
     return;
   }
 };
+
+// export const fetchTodo = async () => {
+//   try {
+//     const response = await fetch("http://localhost:3000/todos");
+//     const data = await response.json();
+//     console.log(data);
+//     return data;
+//   } catch (error) {
+//     console.error("Todo 데이터 로드 실패", error);
+//     return;
+//   }
+// };
