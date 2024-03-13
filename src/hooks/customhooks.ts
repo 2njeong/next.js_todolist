@@ -1,33 +1,28 @@
 "use client";
-
-import { Company_Query_Key, Todos_Query_key } from "(@/axios/queryFns)";
-import { QueryClient, useSuspenseQueries } from "@tanstack/react-query";
+import {
+  Company_Query_Key,
+  Todos_Query_key,
+  fetchCompany,
+  fetchTodos,
+} from "(@/fns/queryFns)";
+import { useSuspenseQueries } from "@tanstack/react-query";
 import { useMemo } from "react";
 
-const useComapanyTodosQuery = () => {
-  const queryClient = new QueryClient();
-  const result = useSuspenseQueries({
+export const useComapanyTodosQuery = () => {
+  const results = useSuspenseQueries({
     queries: [
       {
         queryKey: Company_Query_Key,
-        queryFn: async () => {
-          const response = await fetch("http://localhost:4000/company");
-          const data = response.json();
-          return data;
-        },
+        queryFn: fetchCompany,
       },
       {
         queryKey: Todos_Query_key,
-        queryFn: async () => {
-          const response = await fetch("/todos");
-          const data = response.json();
-          return data;
-        },
+        queryFn: fetchTodos,
       },
     ],
   });
 
-  return result;
+  return results;
 };
 
 export const useCustomView = () => {

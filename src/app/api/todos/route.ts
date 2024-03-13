@@ -2,7 +2,6 @@
 export const GET = async (request: Request) => {
   const response = await fetch("http://localhost:4000/todos");
   const todos = await response.json();
-  console.log(todos);
 
   if (!todos) {
     return new Response("Todo is not found", {

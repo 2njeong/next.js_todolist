@@ -26,9 +26,9 @@ export default function RootLayout({
             <Link href={`/${page}`}>{page.toUpperCase()}</Link>
           </p>
         ))}
-        {/* <Suspense fallback={<div>응애 나 애기 폴백</div>}> */}
-        <QueryProvider>{children}</QueryProvider>
-        {/* </Suspense> */}
+        <Suspense fallback={<div>응애 나 애기 폴백</div>}>
+          <QueryProvider>{children}</QueryProvider>
+        </Suspense>
       </body>
     </html>
   );

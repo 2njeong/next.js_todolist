@@ -1,5 +1,5 @@
 "use client";
-import { Company_Query_Key, fetchCompany } from "(@/axios/queryFns)";
+import { Company_Query_Key, fetchCompany } from "(@/fns/queryFns)";
 import { useQuery } from "@tanstack/react-query";
 
 const About = () => {

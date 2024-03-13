@@ -1,9 +1,10 @@
 // 방법1. dehydration으로 ISR 구현
-import { Todos_Query_key } from "(@/axios/queryFns)";
+import { Todos_Query_key } from "(@/fns/queryFns)";
 import {
   HydrationBoundary,
   QueryClient,
   dehydrate,
+  useQueries,
 } from "@tanstack/react-query";
 import Report from "./Report";
 
