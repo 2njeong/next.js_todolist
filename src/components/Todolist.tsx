@@ -1,18 +1,19 @@
 "use client";
-import { useEditTodo } from "(@/hooks/customQueryhooks)";
+import { useDeleteTodo, useEditTodo } from "(@/hooks/customQueryhooks)";
 import { Todo } from "(@/types)";
-import { useState } from "react";
 
 const Todolist = ({ todos }: { todos: Todo[] }) => {
-  console.log("여기는 투두리스트");
-
-  // const [checked, setChecked] = useState(false);
   const { mutate: mutateToEdit } = useEditTodo();
+  const { mutate: mutateToDelete } = useDeleteTodo();
 
   const checkHandler = (todo: Todo) => {
-    console.log("클릭!");
-    // setChecked((prevState) => !prevState); // 이전 상태를 기반으로 반전시킴
     mutateToEdit(todo);
+  };
+
+  const deleteHandler = (todo: Todo) => {
+    if (window.confirm(`할일 [${todo.title}]을 삭제하시겠습니까?`)) {
+      mutateToDelete(todo);
+    }
   };
 
   return (
@@ -28,7 +29,7 @@ const Todolist = ({ todos }: { todos: Todo[] }) => {
             checked={todo.isDone}
             onChange={() => checkHandler(todo)}
           ></input>
-          <button>삭제</button>
+          <button onClick={() => deleteHandler(todo)}>삭제</button>
         </div>
       ))}
     </>

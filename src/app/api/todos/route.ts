@@ -52,3 +52,15 @@ export async function PATCH(request: Request) {
     todo,
   });
 }
+export async function DELETE(request: Request) {
+  const data = await request.json();
+
+  const response = await fetch(`${TODO_DB_URL}/${data.id}`, {
+    method: "DELETE",
+  });
+  const todo = await response.json();
+
+  return Response.json({
+    todo,
+  });
+}

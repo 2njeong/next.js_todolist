@@ -29,16 +29,18 @@ export const fetchTodos = async () => {
   }
 };
 
-export const fetchPostTodo = async (data: Pick<Todo, "title" | "contents">) => {
+export const fetchPostTodo = async (
+  newTodo: Pick<Todo, "title" | "contents">
+) => {
   try {
     const response = await fetch(TODOS_SERVER, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify(newTodo),
     });
-
+    console.log("새로운 할일 추가요청 ㄱㄱ");
     return response.json();
   } catch (error) {
     console.error(error);
@@ -55,10 +57,27 @@ export const fetchPatchTodo = async (data: Todo) => {
       },
       body: JSON.stringify(data),
     });
-    console.log(response);
+    console.log("할일 업데이트 요청 ㄱㄱ");
     return response.json();
   } catch (error) {
     console.error(error);
     console.log("할일 업데이트 요청 실패");
+  }
+};
+
+export const fetchDeleteTodo = async (data: Todo) => {
+  try {
+    const response = await fetch(`${TODOS_SERVER}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+    console.log("할일 삭제요청 ㄱㄱ");
+    return response.json();
+  } catch (error) {
+    console.error(error);
+    console.log("할일 삭제 요청 실패");
   }
 };

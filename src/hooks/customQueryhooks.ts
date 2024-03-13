@@ -4,6 +4,7 @@ import {
   COMPANY_QUERY_KEY,
   TODOS_QUERY_KEY,
   fetchCompany,
+  fetchDeleteTodo,
   fetchPatchTodo,
   fetchPostTodo,
   fetchTodos,
@@ -80,4 +81,15 @@ export const useEditTodo = () => {
     },
   });
   return { mutate: mutateToEdit };
+};
+
+export const useDeleteTodo = () => {
+  const { mutate: mutateToDelete } = useMutation({
+    mutationFn: fetchDeleteTodo,
+    onSuccess: async () => {
+      await queryClient.invalidateQueries({ queryKey: TODOS_QUERY_KEY });
+      console.log("할일 상태 삭제 성공!");
+    },
+  });
+  return { mutate: mutateToDelete };
 };

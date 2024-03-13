@@ -6,30 +6,6 @@
   },
   "todos": [
     {
-      "id": "1",
-      "title": "아메리카노 마시기",
-      "contents": "아메리카노 마시기",
-      "isDone": true
-    },
-    {
-      "id": "2",
-      "title": "라떼 마시기",
-      "contents": "라떼 마시기",
-      "isDone": false
-    },
-    {
-      "id": "3",
-      "title": "에스프레소 마시기",
-      "contents": "에스프레소 마시기",
-      "isDone": false
-    },
-    {
-      "id": "4",
-      "title": "홍차 마시기",
-      "contents": "홍차 마시기",
-      "isDone": false
-    },
-    {
       "id": "5",
       "title": "밀크티 마시기",
       "contents": "밀크티 마시기",
