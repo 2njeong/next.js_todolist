@@ -3,14 +3,10 @@ import { Company_Query_Key, fetchCompany } from "(@/axios/queryFns)";
 import { useQuery } from "@tanstack/react-query";
 
 const About = () => {
-  const { data, isLoading } = useQuery({
+  const { data } = useQuery({
     queryKey: Company_Query_Key,
     queryFn: fetchCompany,
   });
-
-  // if (isLoading) {
-  //   return <div>로딩중..</div>;
-  // }
 
   return (
     <div>
