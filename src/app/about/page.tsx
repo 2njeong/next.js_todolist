@@ -5,6 +5,12 @@ import {
   dehydrate,
 } from "@tanstack/react-query";
 import About from "./About";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About",
+  description: "About our company",
+};
 
 export default async function AboutPage() {
   const queryClient = new QueryClient();

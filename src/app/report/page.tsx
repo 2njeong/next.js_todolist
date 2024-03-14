@@ -6,6 +6,12 @@ import {
   dehydrate,
 } from "@tanstack/react-query";
 import Report from "./Report";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Report",
+  description: "Report Todos",
+};
 
 export default async function ReportPage() {
   const queryClient = new QueryClient();

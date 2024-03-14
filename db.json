@@ -9,13 +9,13 @@
       "id": "5",
       "title": "밀크티 마시기",
       "contents": "밀크티 마시기",
-      "isDone": false
+      "isDone": true
     },
     {
       "id": "6",
       "title": "스무디 마시기",
       "contents": "스무디 마시기",
-      "isDone": false
+      "isDone": true
     },
     {
       "id": "7",
@@ -33,7 +33,7 @@
       "id": "9",
       "title": "녹차라떼 마시기",
       "contents": "녹차라떼 마시기",
-      "isDone": false
+      "isDone": true
     },
     {
       "id": "10",
@@ -69,6 +69,12 @@
       "id": "1270",
       "title": "저녁은",
       "contents": "뭐먹?",
+      "isDone": false
+    },
+    {
+      "id": "8a15",
+      "title": "넥스트",
+      "contents": "공부하기",
       "isDone": false
     }
   ]
