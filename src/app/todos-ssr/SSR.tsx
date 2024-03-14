@@ -22,10 +22,15 @@ const SSR = () => {
   }
 
   return (
-    <>
-      <Todolist todos={data} />
-      <Link href={"/report"}>할일통계목록보기</Link>
-    </>
+    <div className="w-[1080px] mx-auto mt-[10px]">
+      <Link
+        href={"/report"}
+        className="bg-[#788299] text-white rounded-[3px] px-[3px] py-[2px]"
+      >
+        할일통계목록보기
+      </Link>
+      <Todolist todos={data} ssr={false} />
+    </div>
   );
 };
 

@@ -2,7 +2,7 @@
 import { useDeleteTodo, useEditTodo } from "(@/hooks/customQueryhooks)";
 import { Todo } from "(@/types)";
 
-const Todolist = ({ todos }: { todos: Todo[] }) => {
+const Todolist = ({ todos, ssr }: { todos: Todo[]; ssr: boolean }) => {
   const { mutate: mutateToEdit } = useEditTodo();
   const { mutate: mutateToDelete } = useDeleteTodo();
 
@@ -17,22 +17,34 @@ const Todolist = ({ todos }: { todos: Todo[] }) => {
   };
 
   return (
-    <>
+    <div className="flex flex-wrap gap-4 px-[10px] py-[10px]">
       {todos.map((todo) => (
-        <div key={todo.id}>
+        <div
+          key={todo.id}
+          className="w-100 w-1/4 border-2 border-[#788299] flex flex-col px-[10px] py-[10px]"
+        >
           <div>
             <p>제목: {todo.title}</p>
             <p>내용: {todo.contents}</p>
           </div>
-          <input
-            type="checkbox"
-            checked={todo.isDone}
-            onChange={() => checkHandler(todo)}
-          ></input>
-          <button onClick={() => deleteHandler(todo)}>삭제</button>
+          {ssr ? (
+            <div className="flex gap-2">
+              <input
+                type="checkbox"
+                checked={todo.isDone}
+                onChange={() => checkHandler(todo)}
+              ></input>
+              <button
+                className="text-[#788299]"
+                onClick={() => deleteHandler(todo)}
+              >
+                삭제
+              </button>
+            </div>
+          ) : null}
         </div>
       ))}
-    </>
+    </div>
   );
 };
 

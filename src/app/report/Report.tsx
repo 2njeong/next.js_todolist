@@ -21,14 +21,14 @@ const Report = () => {
   }
 
   return (
-    <>
+    <div className="w-[1080px] mx-auto mt-[10px]">
       <p>현재까지 {data.length}개의 todolist가 등록되었습니다.</p>
       <p>
         현재까지 {data?.filter((d) => d.isDone === true).length}개의
         완료리스트와 {data.filter((d) => d.isDone === false).length}개의 할일
         리스트가 존재합니다.
       </p>
-    </>
+    </div>
   );
 };
 

@@ -1,6 +1,6 @@
 {
   "companyInfo": {
-    "name": "창식튜터님",
+    "name": "스파르타",
     "description": "우리회사에 대한 설명입니다. blablabla~~~~~~",
     "image": "http://~~~~"
   },
@@ -21,7 +21,7 @@
       "id": "7",
       "title": "말차 마시기",
       "contents": "말차 마시기",
-      "isDone": false
+      "isDone": true
     },
     {
       "id": "8",

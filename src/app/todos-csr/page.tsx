@@ -48,21 +48,45 @@ const TodosCSR = () => {
   };
 
   return (
-    <>
-      <div>
-        <span>제목</span>
-        <input value={title} onChange={titleHandler}></input>
-        <span>내용</span>
-        <input value={contents} onChange={contentsHandler}></input>
-        <button onClick={AddBtnHandler}>추가</button>
-        <button onClick={goReport}>할일정보통계</button>
+    <div className="w-[1080px] mx-auto mt-[10px]">
+      <div className="flex justify-between mb-[10px]">
+        <div className="flex gap-[5px]">
+          <span>제목</span>
+          <input
+            value={title}
+            onChange={titleHandler}
+            className="outline-none border-b-2"
+          ></input>
+          <span>내용</span>
+          <input
+            value={contents}
+            onChange={contentsHandler}
+            className="outline-none border-b-2 mr-[5px]"
+          ></input>
+          <button
+            onClick={AddBtnHandler}
+            className="bg-[#788299] text-white rounded-[3px] px-[3px] py-[2px]"
+          >
+            추가
+          </button>
+        </div>
+        <div>
+          <button
+            onClick={goReport}
+            className="bg-[#788299] text-white rounded-[3px] px-[3px] py-[2px]"
+          >
+            할일정보통계
+          </button>
+        </div>
       </div>
-      <div>
-        <Todolist todos={data} />
-        <WorkingNDone todos={data} isDone={true} />
-        <WorkingNDone todos={data} isDone={false} />
+      <div className="bg-[#f1e1e1] bg-opacity-80">
+        <Todolist todos={data} ssr={true} />
+        <div className="flex justify-around">
+          <WorkingNDone todos={data} isDone={false} />
+          <WorkingNDone todos={data} isDone={true} />
+        </div>
       </div>
-    </>
+    </div>
   );
 };
 

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Link from "next/link";
+import "./globals.css";
 import QueryProvider from "./provider";
 import { Suspense } from "react";
 
@@ -20,10 +21,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <nav className="flex">
+        <nav className="bg-[#d7c4c4] flex justify-around w-[1080px] h-[50px] items-center mx-auto mt-[20px]">
           {pages.map((page) => (
             <p key={page}>
-              <Link href={`/${page}`}>{page.toUpperCase()}</Link>
+              <Link href={`/${page}`} style={{ textDecoration: "none" }}>
+                {page.toUpperCase()}
+              </Link>
             </p>
           ))}
         </nav>

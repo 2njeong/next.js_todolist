@@ -11,7 +11,7 @@ const About = () => {
   const { companyInfo } = data;
 
   return (
-    <div>
+    <div className="w-[1080px] mx-auto mt-[10px]">
       우리회사의 이름은 {companyInfo.name}이고, 설명은
       {companyInfo.description}이며, 이미지는 {companyInfo.image}
       입니다.
